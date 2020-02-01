@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import Login from "./screen/Login";
 import Error404 from "./screen/Error404";
 import Dashboard from "./screen/dashboard";
-import "./mainStyle.css"
 
 class App extends React.Component{
 

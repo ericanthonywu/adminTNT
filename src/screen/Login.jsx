@@ -3,7 +3,14 @@ import React from "react";
 class Login extends React.Component{
     render() {
         return (
-            <p>hello world</p>
+            <div className={"container"}>
+                <div className={"row"}>
+                    <div className={"col-lg-3"}>asd</div>
+                    <div className={"col-lg-3"}>asd</div>
+                    <div className={"col-lg-3"}>asd</div>
+                    <div className={"col-lg-3"}>asd</div>
+                </div>
+            </div>
         );
     }
 }

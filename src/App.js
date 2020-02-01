@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {toast, ToastContainer} from "react-toastify";
+import {Route, Switch, withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+import Login from "./screen/Login";
+import Error404 from "./screen/Error404";
+import Dashboard from "./screen/dashboard";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+  render() {
+    return (
+        <div>
+          <ToastContainer enableMultiContainer position={toast.POSITION.TOP_RIGHT}/>
+            <Switch>
+                <Route path={'/'} exact component={Login}/>
+                <Route path={'/dashboard'} exact component={Dashboard}/>
+                <Route component={Error404}/>
+            </Switch>
+        </div>
+    );
+  }
+
 }
 
-export default App;
+export default withRouter(
+    connect(state => state.user)(App)
+)

@@ -1,1 +1,60 @@
 // Your custom styles
+
+body{
+  background: rgb(183,255,245);
+  background: linear-gradient(90deg, rgba(183,255,245,1) 26%, rgba(226,255,129,1) 100%, rgba(226,255,129,1) 100%);
+}
+
+.mainContainer{
+  padding:0;
+  height:100%;
+
+}
+
+.loginbg{
+  position: relative;
+  min-height: 100%;
+  height:100vh;
+}
+
+.contentContainer{
+  width:90%;
+  margin:auto;
+  padding: 20px 0 20px 0;
+}
+
+.header{
+  height:100px;
+  background-color:#fff;
+  margin:20px;
+  opacity: 0.65;
+  border-radius:15px;
+}
+
+.cardCustom{
+  margin: 20px;
+}
+
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold
+}
+
+.loginPanelContainer{
+  text-align:center;
+  background:#fff;
+  margin-top:12px;
+  min-height:300px;
+  border-radius:12px;
+  box-shadow:0px 4px 8px  #e0e0e0;
+  padding:50px;
+}
+
+.loginPanelContainer h1{
+  margin-bottom:40px;
+  font-size:150%;
+  font-weight:bold;
+}

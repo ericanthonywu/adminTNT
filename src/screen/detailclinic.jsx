@@ -18,7 +18,7 @@ import {
     MDBIcon, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn, MDBCardBody, MDBCard
 } from "mdbreact";
 
-class Dashboard extends React.Component{
+class detailclinic extends React.Component{
 
     state = {
         isOpen: false
@@ -60,78 +60,30 @@ class Dashboard extends React.Component{
 
                 <MDBRow className={"contentContainer"}>
                     <MDBCol size="2">
-                        <MDBBtn color="blue" href="#">Add Clinic</MDBBtn>
+                        <MDBBtn color="unique" href="#">Back</MDBBtn>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow className={"contentContainer"}>
 
 
-
-                    <MDBCard style={{ width: "20%", margin: "20px" }}>
-                        <MDBCardBody>
-                            <MDBCardTitle>Clinic A</MDBCardTitle>
-                            <MDBCardText small>
-                                17/02/2020
-                            </MDBCardText>
-                            <MDBCardText>
-                                Size: 5 Veteranians
-                            </MDBCardText>
-                            <MDBCardText>
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card&apos;s content.
-                            </MDBCardText>
-                            <MDBBtn href="#">View</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-
-                    <MDBCard style={{ width: "20%", margin: "20px" }}>
-                        <MDBCardBody>
-                            <MDBCardTitle>Clinic A</MDBCardTitle>
-                            <MDBCardText small>
-                                17/02/2020
-                            </MDBCardText>
-                            <MDBCardText>
-                                Size: 5 Veteranians
-                            </MDBCardText>
-                            <MDBCardText>
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card&apos;s content.
-                            </MDBCardText>
-                            <MDBBtn href="#">View</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-
-                    <MDBCard style={{ width: "20%", margin: "20px" }}>
-                        <MDBCardBody>
-                            <MDBCardTitle>Clinic A</MDBCardTitle>
-                            <MDBCardText small>
-                                17/02/2020
-                            </MDBCardText>
-                            <MDBCardText>
-                                Size: 5 Veteranians
-                            </MDBCardText>
-                            <MDBCardText>
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card&apos;s content.
-                            </MDBCardText>
-                            <MDBBtn href="#">View</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-
-                    <MDBCard style={{ width: "20%", margin: "20px" }}>
+                    <MDBCard style={{ width: "100%", margin: "20px" }}>
                     <MDBCardBody>
                         <MDBCardTitle>Clinic A</MDBCardTitle>
                         <MDBCardText small>
                             17/02/2020
                         </MDBCardText>
                         <MDBCardText>
-                            Size: 5 Veteranians
+                            Size: <span className="font-weight-bold">5</span> Veteranians
+                        </MDBCardText>
+                        <MDBCardText>
+                            Location: <span className="font-weight-bold">South Jakarta</span>
                         </MDBCardText>
                         <MDBCardText>
                             Some quick example text to build on the card title and make
                             up the bulk of the card&apos;s content.
                         </MDBCardText>
-                        <MDBBtn href="#">View</MDBBtn>
+                        <MDBBtn rounded color="success">Edit</MDBBtn>
+                        <MDBBtn rounded color="danger">Erase</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
 
@@ -143,4 +95,4 @@ class Dashboard extends React.Component{
     }
 
 }
-export default Dashboard
+export default detailclinic

@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import Login from "./screen/Login";
 import Error404 from "./screen/Error404";
 import Dashboard from "./screen/dashboard";
+import detailclinic from "./screen/detailclinic";
 
 class App extends React.Component{
 
@@ -15,6 +16,7 @@ class App extends React.Component{
             <Switch>
                 <Route path={'/'} exact component={Login}/>
                 <Route path={'/dashboard'} exact component={Dashboard}/>
+                <Route path={'/detailclinic'} exact component={detailclinic}/>
                 <Route component={Error404}/>
             </Switch>
         </div>

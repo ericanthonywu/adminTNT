@@ -134,10 +134,7 @@ class Dashboard extends React.Component{
                         <MDBBtn href="#">View</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
-
                 </MDBRow>
-
-
             </MDBContainer>
         );
     }

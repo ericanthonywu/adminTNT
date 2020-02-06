@@ -58,3 +58,35 @@ body{
   font-size:150%;
   font-weight:bold;
 }
+
+.cardCustom{
+  border-radius:24px;
+  padding:12px;
+}
+
+.customNavItem{
+  padding-top:0px;
+  margin: 0 12px 0 12px;
+}
+
+.notificationValue{
+  position:absolute;
+  background: #b71c1c;
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  text-align:center;
+  right:142px;
+  top:1px;
+}
+
+.notificationToolTip{
+  position:absolute;
+  right:165px;
+  top:40px;
+  border-radius:12px;
+  padding:24px;
+  background:#fff;
+  max-width:500px;
+  box-shadow:0 2px 4px #e0e0e0;
+}

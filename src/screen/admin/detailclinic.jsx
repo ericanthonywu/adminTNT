@@ -18,7 +18,7 @@ import {
     MDBIcon, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn, MDBCardBody, MDBCard
 } from "mdbreact";
 
-class detailclinic extends React.Component{
+class DetailClinic extends React.Component{
 
     state = {
         isOpen: false
@@ -95,4 +95,4 @@ class detailclinic extends React.Component{
     }
 
 }
-export default detailclinic
+export default DetailClinic

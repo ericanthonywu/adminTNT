@@ -9,6 +9,8 @@ import DetailClinic from "./screen/admin/detailclinic";
 import clinicLogin from "./screen/clinic/login";
 import Vet from "./screen/clinic/vet";
 import clinicDashboard from "./screen/clinic/dashboard";
+import appointmentHistory from "./screen/clinic/appointmentHistory";
+import vetList from "./screen/clinic/vetList";
 
 class App extends React.Component{
   render() {
@@ -19,6 +21,8 @@ class App extends React.Component{
                 <Route path={'/'} exact component={clinicLogin}/>
                 <Route path={'/dashboard'} exact component={clinicDashboard}/>
                 <Route path={'/vet'} exact component={Vet}/>
+                <Route path={'/appointmentHistory'} exact component={appointmentHistory}/>
+                <Route path={'/vetList'} exact component={vetList}/>
 
                 <Route path={'/admin/'} exact component={Login}/>
                 <Route path={'/admin/dashboard'} exact component={Dashboard}/>

@@ -82,11 +82,35 @@ body{
 
 .notificationToolTip{
   position:absolute;
-  right:165px;
+  right:145px;
   top:40px;
   border-radius:12px;
   padding:24px;
   background:#fff;
   max-width:500px;
   box-shadow:0 2px 4px #e0e0e0;
+  border:1px solid #eaeaea;
+  z-index:1;
+  max-height:500px;
+  overflow:scroll;
 }
+
+.notificationItem{
+  background-color:#eaeaea;
+  padding:15px;
+  margin-bottom:10px;
+}
+
+.calenderOverlay{
+  position:absolute;
+  border-radius:12px;
+  padding:20px;
+  max-height:400px;
+  background: #fff;
+  box-shadow: 0 2px 4px #e0e0e0;
+  border: 1px solid #e0e0e0;
+  z-index:1;
+  left: 110px;
+  top: 252px;
+}
+

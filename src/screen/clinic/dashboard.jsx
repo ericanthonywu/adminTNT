@@ -20,48 +20,9 @@ import {
 
 class clinicDashboard extends React.Component{
 
-    state = {
-        isOpen: false
-    };
-
-    toggleCollapse = () => {
-        this.setState({ isOpen: !this.state.isOpen });
-    }
-
     render() {
         return (
             <MDBContainer fluid className={"mainContainer"}>
-                    <MDBNavbar color="white" white expand="md">
-                        <MDBNavbarBrand>
-                            <strong className="black-text">Tail and Tale Clinic</strong>
-                        </MDBNavbarBrand>
-                        <MDBNavbarToggler onClick={this.toggleCollapse} />
-                        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-
-                            <MDBNavbarNav left>
-                                <MDBNavItem className={"customNavItem"}><a href="#">Appointment History</a></MDBNavItem>
-                                <MDBNavItem className={"customNavItem"}><a href="#">Veteranians</a></MDBNavItem>
-                                <MDBNavItem>
-
-                                </MDBNavItem>
-                            </MDBNavbarNav>
-                            <MDBNavbarNav right>
-                                <MDBNavItem style={{marginRight:20}}>
-                                    <div className="notificationValue">
-                                        <p style={{color:"#fff", lineHeight:"32px", fontWeight:"bold"}}>1</p>
-                                    </div>
-                                    <MDBNavLink className="black-text" to="#!">
-                                        <i style={{paddingTop:0, fontSize:24}} className="far fa-bell"></i>
-                                    </MDBNavLink>
-                                </MDBNavItem>
-                                <MDBNavItem>
-                                    <MDBNavLink className="black-text" to="#!">Logout
-                                    </MDBNavLink>
-                                </MDBNavItem>
-
-                            </MDBNavbarNav>
-                        </MDBCollapse>
-                    </MDBNavbar>
                     <div className="notificationToolTip">
                         <div className={"notificationItem"}>
                             <h5 style={{fontSize:16}}>New Booking Appointment</h5>

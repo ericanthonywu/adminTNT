@@ -6,6 +6,8 @@ import {
 } from "mdbreact";
 import Axios from "axios";
 import {api_url_admin} from "../../global";
+import {connect} from "react-redux";
+import {login} from "../../redux/actions";
 
 class Login extends React.Component{
     state = {
@@ -25,8 +27,14 @@ class Login extends React.Component{
                 username: username,
                 password: password
             }).then(data => {
+                this.props.login({
+                    token: data.data.token,
+                    username: data.data.username,
+                    id: data.data.id
+                })
                 localStorage.setItem('token',data.data.token)
                 localStorage.setItem('username',data.data.username)
+                localStorage.setItem('id',data.data.id)
             })
         }
     }
@@ -60,4 +68,4 @@ class Login extends React.Component{
         );
     }
 }
-export default Login
+export default connect(state => state.user,{login})(Login)

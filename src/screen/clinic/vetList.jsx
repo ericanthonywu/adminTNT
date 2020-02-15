@@ -3,7 +3,7 @@ import {
     MDBBtn, MDBCard, MDBCardBody, MDBCardText, MDBCardTitle,
     MDBCol,
     MDBCollapse,
-    MDBContainer, MDBFormInline,
+    MDBContainer,
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarNav,

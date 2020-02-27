@@ -59,11 +59,11 @@ class vetList extends React.Component {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    toast.success(`Poof! Vet ${username} has been added to your clinic!`)
                     Axios.post(`${api_url_clinic}addVetClinic`, {
                         token: this.props.token,
                         vetId: id
                     }).then(() => {
+                        toast.success(`Poof! Vet ${username} has been added to your clinic!`)
                         const {clinicVet} = this.state
                         clinicVet.push(({
                             id: id,
@@ -75,6 +75,10 @@ class vetList extends React.Component {
                             modal: false,
                             clinicVet: clinicVet
                         })
+                    }).catch(err => {
+                        if(err.status === 409){
+                            toast.error("Oops! You already had this vet")
+                        }
                     })
                 }
             });
@@ -123,12 +127,12 @@ class vetList extends React.Component {
                                             <p><span style={{fontWeight: "bold"}}>Joined</span>: {moment(data.createdAt).format("DD/MM/YYYY")}</p>
                                         </MDBCardText>
                                         <MDBCardText>
-                                            <p><span style={{fontWeight: "bold"}}>Certificate ID</span>: {data.id_cert}</p>
+                                            <p><span style={{fontWeight: "bold"}}>Certificate ID</span>: {data.cert_id}</p>
                                         </MDBCardText>
-                                        <MDBCardText>
-                                            <p><span style={{fontWeight: "bold"}}>Day(s) of Duty</span>: Mon, Wed, Fri</p>
-                                        </MDBCardText>
-                                        <MDBBtn href="#">View</MDBBtn>
+                                        {/*<MDBCardText>*/}
+                                        {/*    <p><span style={{fontWeight: "bold"}}>Day(s) of Duty</span>: Mon, Wed, Fri</p>*/}
+                                        {/*</MDBCardText>*/}
+                                        {/*<MDBBtn href="#">View</MDBBtn>*/}
                                     </MDBCardBody>
                                 </MDBCard>
                             )

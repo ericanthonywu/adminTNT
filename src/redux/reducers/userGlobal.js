@@ -1,7 +1,8 @@
 const globalstate = {
     token: "",
     username: "",
-    _id: 0
+    id: 0,
+    role: ""
 };
 
 export default (state = globalstate, action) => {
@@ -11,10 +12,11 @@ export default (state = globalstate, action) => {
                 ...globalstate,
                 token: action.payload.token,
                 username: action.payload.username,
-                _id: action.payload.id,
+                id: action.payload.id,
+                role: action.payload.role
             };
         case "logout":
-            return {...globalstate, token: "", username: "", _id: 0};
+            return {...globalstate, token: "", username: "", id: 0, role: ''};
         default:
             return globalstate
     }

@@ -11,8 +11,9 @@ import {
 } from "mdbreact";
 import {connect} from "react-redux";
 import {logout} from "../../redux/actions";
+import {Link} from "react-router-dom";
 
-class Navbar extends React.Component {
+class AdminNavbar extends React.Component {
     state = {
         isOpen: false,
         modal: true
@@ -22,12 +23,19 @@ class Navbar extends React.Component {
         this.setState({isOpen: !this.state.isOpen});
     }
 
+    logout = () => {
+        this.props.logout()
+        this.props.history.push("/")
+    }
+
     render() {
         return (
-            <MDBNavbar color="white" white expand="md">
-                <MDBNavbarBrand>
-                    <strong className="black-text">Tail n' Tale Admin Panel</strong>
-                </MDBNavbarBrand>
+            <MDBNavbar fixed={"top"} color="white" white expand="md">
+                <Link to={"/dashboard"}>
+                    <MDBNavbarBrand>
+                        <strong className="black-text">Tail n' Tale Admin Panel</strong>
+                    </MDBNavbarBrand>
+                </Link>
                 <MDBNavbarToggler onClick={this.toggleCollapse}/>
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
                     <MDBNavbarNav left>
@@ -42,7 +50,7 @@ class Navbar extends React.Component {
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
                         <MDBNavItem active>
-                            <MDBBtn onClick={this.props.logout} className="black-text" to="#!">Logout
+                            <MDBBtn onClick={this.logout} className="black-text">Logout
                             </MDBBtn>
                         </MDBNavItem>
 
@@ -54,4 +62,4 @@ class Navbar extends React.Component {
 
 }
 
-export default connect(state => state.user,{logout})(Navbar)
+export default connect(state => state.user, {logout})(AdminNavbar)

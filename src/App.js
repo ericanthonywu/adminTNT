@@ -1,105 +1,133 @@
 import React from "react";
 import {toast, ToastContainer} from "react-toastify";
-import {Route, Switch, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import Login from "./screen/admin/Login";
-import Error404 from "./screen/admin/Error404";
+import Error404 from "./screen/Error404";
 import Dashboard from "./screen/admin/dashboard";
 import DetailClinic from "./screen/admin/detailclinic";
 import clinicLogin from "./screen/clinic/login";
-import Vet from "./screen/clinic/vet";
 import clinicDashboard from "./screen/clinic/dashboard";
 import appointmentHistory from "./screen/clinic/appointmentHistory";
 import vetList from "./screen/clinic/vetList";
 import Axios from "axios";
 import {backend_url} from "./global";
-import Navbar from "./screen/component/navbar";
+import Navbar from "./screen/component/adminNavbar";
 import {login, logout} from "./redux/actions";
+import ClinicNavbar from "./screen/component/clinicNavbar";
+import Socket from 'socket.io-client'
+import Vet from "./screen/admin/Vet";
+import EditVet from "./screen/admin/EditVet";
 
 class App extends React.Component {
 
-    generateProtectedRoute = () => {
-        const role = localStorage.getItem("role"),
-         token = localStorage.getItem("token"),
-         username = localStorage.getItem("username"),
-         id = localStorage.getItem("id");
-
-        if (!role || !token || !username || !id) {
-            return null
-        }
+    generateProtectedRoute = role => {
 
         switch (role) {
             case "clinic":
                 return (
-                    <>
-                        <Navbar/>
+                    <BrowserRouter basename={"/"}>
+                        <ClinicNavbar {...this.props}/>
                         <Route path={'/dashboard'} exact component={clinicDashboard}/>
                         <Route path={'/vet'} exact component={Vet}/>
                         <Route path={'/appointmentHistory'} exact component={appointmentHistory}/>
                         <Route path={'/vetList'} exact component={vetList}/>
-                    </>
-                )
+                    </BrowserRouter>
+                );
             case "admin":
                 return (
-                    <>
-                        <Navbar/>
-                        <Route path={'/admin/dashboard'} exact component={Dashboard}/>
-                        <Route path={'/admin/detailClinic'} exact component={DetailClinic}/>
-                    </>
-                )
+                    <BrowserRouter basename="/admin">
+                        <Navbar {...this.props}/>
+                        <Route path={'/dashboard'} exact component={Dashboard}/>
+                        <Route path={'/vet'} exact component={Vet}/>
+                        <Route path={'/vet/:id'} exact component={EditVet}/>
+                        <Route path={'/detailClinic/:clinicId'} exact component={DetailClinic}/>
+                    </BrowserRouter>
+                );
             default:
                 return null
         }
-
-
-        // TODO: add security role in JWT
-        // Axios.post(`${backend_url}checkValidToken`,{
-        //     token: token
-        // }).then(data => {
-        //     if(data.data.role !== role){
-        //         return null
-        //     }
-        // switch (role) {
-        //     case "clinic":
-        //         return (
-        //             <>
-        //                 <Route path={'/dashboard'} exact component={clinicDashboard}/>
-        //                 <Route path={'/vet'} exact component={Vet}/>
-        //                 <Route path={'/appointmentHistory'} exact component={appointmentHistory}/>
-        //                 <Route path={'/vetList'} exact component={vetList}/>
-        //             </>
-        //         )
-        //     case "admin":
-        //         return (
-        //             <>
-        //                 <Route path={'/admin/dashboard'} exact component={Dashboard}/>
-        //                 <Route path={'/admin/detailClinic'} exact component={DetailClinic}/>
-        //             </>
-        //         )
-        //     default:
-        //         return null
-        // }
-        //
-        // }).catch(err => toast.error("Token Expire"))
-    }
+    };
 
     componentDidMount() {
-        const token = localStorage.getItem("token")
-        const username = localStorage.getItem("username")
-        const id = localStorage.getItem("id")
-        const role = localStorage.getItem("role")
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("username");
+        const id = localStorage.getItem("id");
+        const role = localStorage.getItem("role");
+
+        //global axios handler
+        Axios.interceptors.response.use(res => res.data, err => {
+            const {response} = err;
+            if (!response) {
+                toast.error("No Connection")
+            } else {
+                switch (response.status) {
+                    case 419:
+                        // session expire
+                        this.props.logout();
+                        this.props.history.push("/");
+                        toast.error("Token Expire");
+                        break;
+                    case 500:
+                        // error server like mongodb, etc
+                        console.log(response.data); //TODO: Remove on Prod
+                        const {errmsg, code} = response.data
+                        switch (code) {
+                            case 11000:
+                                Object.keys("keyValue").forEach(key => {
+                                    toast.error(`Field ${key} duplicated`)
+                                })
+                                break;
+                            default:
+                                toast.error(`Something error with code ${code} \n Message : ${errmsg}`)
+                                console.log(errmsg)
+                        }
+                        break;
+                    case 401:
+
+                        // unauthorized
+                        toast.error("username / password salah");
+                        break;
+                    case 403:
+                        // verified but has error (?)
+                        toast.error("Email status not verified")
+                        break;
+                }
+            }
+            return Promise.reject(response);
+        });
 
         if (token && username && id && (role === "admin" || role === "clinic")) {
-            this.props.login({
-                token: token,
-                username: username,
-                id: id,
-                role: role
-            })
+            this.checkValidToken(token, username, id, role)
         } else {
             this.props.logout()
         }
     }
+
+    checkValidToken = (token, username, id, role) => {
+        Axios.post(`${backend_url}checkValidToken`, {
+            token: token
+        }).then(async data => {
+            // if (data.data.role !== role) {
+            //     return null
+            // }
+
+            await this.props.login({
+                token: token,
+                username: username,
+                id: id,
+                role: data.role
+            });
+            localStorage.setItem("role", data.role)
+
+        }).catch(err => {
+            if (!err) {
+                return this.checkValidToken(token, username, id, role)
+            }
+            this.props.history.push("/");
+            this.props.logout()
+        })
+    };
 
     render() {
         return (
@@ -107,8 +135,8 @@ class App extends React.Component {
                 <ToastContainer enableMultiContainer position={toast.POSITION.TOP_RIGHT}/>
                 <Switch>
                     <Route path={'/'} exact component={clinicLogin}/>
-                    <Route path={'/admin/'} exact component={Login}/>
-                    {this.generateProtectedRoute()}
+                    <Route path={'/admin'} exact component={Login}/>
+                    {this.props.role ? this.generateProtectedRoute(this.props.role) : null}
                     <Route component={Error404}/>
                 </Switch>
             </div>

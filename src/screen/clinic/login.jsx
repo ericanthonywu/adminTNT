@@ -5,11 +5,12 @@ import {
     MDBRow,
 } from "mdbreact";
 import Axios from "axios";
-import {api_url_admin} from "../../global";
+import {api_url_admin, api_url_clinic, globalErrorHandlers} from "../../global";
 import {connect} from "react-redux";
 import {login} from "../../redux/actions";
+import {toast} from "react-toastify";
 
-class Login extends React.Component{
+class Login extends React.Component {
     state = {
         username: "",
         password: ""
@@ -20,24 +21,39 @@ class Login extends React.Component{
             [e.target.name]: e.target.value
         })
 
-    login = () => {
-        const {username,password} = this.state
-        if(username && password){
-            Axios.post(`${api_url_admin}login`,{
+    login = e => {
+        e.preventDefault()
+        const {username, password} = this.state
+        if (username && password) {
+            Axios.post(`${api_url_clinic}login`, {
                 username: username,
                 password: password
             }).then(data => {
                 this.props.login({
-                    token: data.data.token,
-                    username: data.data.username,
-                    id: data.data.id
+                    token: data._token,
+                    username: data.username,
+                    id: data.id,
+                    role: "clinic"
                 })
-                localStorage.setItem('token',data.data.token)
-                localStorage.setItem('username',data.data.username)
-                localStorage.setItem('id',data.data.id)
+                localStorage.setItem('token', data._token)
+                localStorage.setItem('username', data.username)
+                localStorage.setItem('id', data.id)
+                localStorage.setItem('role', "clinic")
+
+                this.props.history.push("/dashboard")
             })
+        } else {
+            if (username) {
+                this.username.focus()
+            } else {
+                this.password.focus()
+            }
         }
     }
+
+    username = React.createRef()
+    password = React.createRef()
+
     render() {
         return (
             <MDBContainer fluid className={"loginbg"}>
@@ -46,14 +62,17 @@ class Login extends React.Component{
                     <MDBCol size="4" className={"login"}>
                         <MDBRow center>
                             <MDBCol center size="12" className={"loginPanelContainer"}>
-                                <form>
+                                <form onSubmit={this.login}>
                                     <h1>Tail and Tale Clinic Login</h1>
-                                    <input type="username" className="form-control mb-4" onChange={this.handleChangeText} name={"username"} title={"username"}
+                                    <input ref={input => this.username = input} type="username"
+                                           className="form-control mb-4" onChange={this.handleChangeText}
+                                           name={"username"} title={"username"}
                                            placeholder="Username"/>
-                                    <input type="password" id="defaultLoginFormPassword"
+                                    <input ref={input => this.password = input} type="password"
+                                           id="defaultLoginFormPassword"
                                            onChange={this.handleChangeText} name={"password"}
                                            className="form-control mb-4" placeholder="Password"/>
-                                    <button className="btn btn-info btn-block my-4" type="submit" onClick={this.login}>Sign in</button>
+                                    <button className="btn btn-info btn-block my-4" type="submit">Sign in</button>
                                 </form>
                                 <MDBRow>
                                     <MDBCol size="12"><a href="#">Forgot Password</a></MDBCol>
@@ -68,4 +87,5 @@ class Login extends React.Component{
         );
     }
 }
-export default connect(state => state.user,{login})(Login)
+
+export default connect(state => state.user, {login})(Login)

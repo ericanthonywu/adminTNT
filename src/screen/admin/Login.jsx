@@ -32,24 +32,19 @@ class Login extends React.Component {
                 username: username,
                 password: password
             }).then(data => {
-                localStorage.setItem('token', data.data._token)
-                localStorage.setItem('username', data.data.username)
-                localStorage.setItem('id', data.data.id)
+                localStorage.setItem('token', data._token)
+                localStorage.setItem('username', data.username)
+                localStorage.setItem('id', data.id)
                 localStorage.setItem('role', 'admin')
                 this.props.login({
-                    token: data.data._token,
-                    username: data.data.username,
-                    id: data.data.id,
+                    token: data._token,
+                    username: data.username,
+                    id: data.id,
                     role: 'admin'
                 })
                 this.props.history.push("/admin/dashboard")
-            }).catch(err => {
-                if (!err.response) {
-                    toast.error("No Connection")
-                } else {
-                    toast.error("Username atau password salah")
-                }
-            }).finally(() => this.setState({loading: false}))
+            }).catch(() => toast.error("Username atau password salah"))
+                .finally(() => this.setState({loading: false}))
         } else {
             if (!username) {
                 this.username.focus()

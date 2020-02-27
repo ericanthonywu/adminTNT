@@ -6,7 +6,7 @@ body{
 }
 
 .mainContainer{
-  padding:0;
+  padding-top:100px;
   height:100%;
 
 }
@@ -76,12 +76,12 @@ body{
   height:30px;
   border-radius:15px;
   text-align:center;
-  right:142px;
-  top:1px;
+  right:148px;
+  top:10px;
 }
 
 .notificationToolTip{
-  position:absolute;
+  position:fixed;
   right:145px;
   top:40px;
   border-radius:12px;
@@ -90,7 +90,7 @@ body{
   max-width:500px;
   box-shadow:0 2px 4px #e0e0e0;
   border:1px solid #eaeaea;
-  z-index:1;
+  z-index:1031;
   max-height:500px;
   overflow:scroll;
 }
@@ -111,6 +111,17 @@ body{
   border: 1px solid #e0e0e0;
   z-index:1;
   left: 110px;
-  top: 252px;
+  top: 322px;
+}
+
+.cardClinic{
+  width:20%;
+  margin:20px;
+  border-radius:12px;
+}
+
+.modal-content{
+  border-radius:12px !important;
+  padding:20px;
 }
 

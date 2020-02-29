@@ -4,10 +4,6 @@ import {
     MDBContainer,
     MDBRow,
     MDBBtn,
-    MDBDropdown,
-    MDBDropdownItem,
-    MDBDropdownMenu,
-    MDBDropdownToggle,
     MDBInput,
     MDBModalHeader,
     MDBModalBody,
@@ -26,7 +22,6 @@ import {toast} from "react-toastify";
 import {connect} from "react-redux";
 
 class Vet extends React.Component {
-
     state = {
         cert_id: "",
         KTP: "",
@@ -42,6 +37,7 @@ class Vet extends React.Component {
         vetData: [],
         editState: {}
     }
+
     addOffset = () => this.state.vetData ? this.setState({
         offset: this.state.offset + 1
     }, () => this.paginationVet(this.state.offset + 8)) : null;

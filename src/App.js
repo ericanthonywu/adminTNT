@@ -15,7 +15,6 @@ import {backend_url} from "./global";
 import Navbar from "./screen/component/adminNavbar";
 import {login, logout} from "./redux/actions";
 import ClinicNavbar from "./screen/component/clinicNavbar";
-import Socket from 'socket.io-client'
 import Vet from "./screen/admin/Vet";
 import EditVet from "./screen/admin/EditVet";
 

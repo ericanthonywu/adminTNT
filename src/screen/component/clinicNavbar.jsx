@@ -19,7 +19,9 @@ import Axios from "axios";
 class ClinicNavbar extends React.Component {
     state = {
         isOpen: false,
-        notification: false
+        notification: false,
+        notificationData: [],
+        unReadNotification: 0
     };
 
     componentDidMount() {
@@ -30,14 +32,14 @@ class ClinicNavbar extends React.Component {
             },
         });
 
-        Axios.post(`${api_url_clinic}getClinicNotification`, {
+        Axios.post(`${api_url_clinic}clinicShowQuickPendingAppointment`, {
             token: this.props.token
-        }).then(r => {
-
-        })
-
-        socket.on("newAppointment", data => {
-
+        }).then(notificationData => this.setState({notificationData}))
+        socket.on("requestEdit", data => {
+            this.setState({unReadNotification: this.state.unReadNotification + 1})
+            const {notificationData} = this.state
+            notificationData.unshift(data)
+            this.setState({notificationData})
         })
     }
 
@@ -72,10 +74,20 @@ class ClinicNavbar extends React.Component {
                             </MDBNavItem>
                         </MDBNavbarNav>
                         <MDBNavbarNav right>
-                            <MDBNavItem style={{marginRight: 20, paddingTop:10}}>
-                                <div className="notificationValue">
-                                    <p style={{color: "#fff", lineHeight: "32px", fontWeight: "bold"}}>1</p>
-                                </div>
+                            <MDBNavItem style={{marginRight: 20, paddingTop: 10}}>
+                                {
+                                    this.state.unReadNotification
+                                        ?
+                                        <div className="notificationValue">
+                                            <p style={{
+                                                color: "#fff",
+                                                lineHeight: "32px",
+                                                fontWeight: "bold"
+                                            }}>{this.state.unReadNotification}</p>
+                                        </div>
+                                        :
+                                        null
+                                }
                                 <MDBNavLink className="black-text"
                                             onClick={() => this.setState({notification: !this.state.notification})}
                                             to="#!">
@@ -93,68 +105,42 @@ class ClinicNavbar extends React.Component {
                 {
                     this.state.notification ?
                         <div className="notificationToolTip">
-                            <div className={"notificationItem"}>
-                                <h5 style={{fontSize: 16}}>New Booking Appointment</h5>
-                                <p>#A123123 <span
-                                    style={{fontWeight: "bold", marginLeft: 10, paddingBottom: 5}}>Eric Anthony</span>
-                                </p>
-                                <MDBRow>
-                                    <MDBCol size="6">
-                                        <MDBBtn>Accept</MDBBtn>
-                                    </MDBCol>
-                                    <MDBCol size="6">
-                                        <MDBBtn color="danger">Reject</MDBBtn>
+                            {
+                                this.state.notificationData.length
+                                    ?
+                                    this.state.notificationData.map(({user, timeRequested, vet}) =>
+                                        <div className={"notificationItem"}>
+                                            <h5 style={{fontSize: 16}}>{user.username} requested time changing</h5>
+                                            <p>Vet: <span
+                                                style={{
+                                                    fontWeight: "bold",
+                                                    marginLeft: 10,
+                                                    paddingBottom: 5
+                                                }}>{vet.username}</span>
+                                            </p>
+                                            <p>Time requested: <span
+                                                style={{
+                                                    fontWeight: "bold",
+                                                    marginLeft: 10,
+                                                    paddingBottom: 5
+                                                }}>{timeRequested}</span>
+                                            </p>
+                                            <MDBRow>
+                                                <MDBCol size="6">
+                                                    <MDBBtn>Accept</MDBBtn>
+                                                </MDBCol>
+                                                <MDBCol size="6">
+                                                    <MDBBtn color="danger">Reject</MDBBtn>
+                                                </MDBCol>
+                                            </MDBRow>
+                                        </div>
+                                    )
+                                    :
+                                    <div className={"notificationItem"}>
+                                        No notification
+                                    </div>
 
-                                    </MDBCol>
-                                </MDBRow>
-                            </div>
-
-                            <div className={"notificationItem"}>
-                                <h5 style={{fontSize: 16}}>New Booking Appointment</h5>
-                                <p>#A123123 <span
-                                    style={{fontWeight: "bold", marginLeft: 10, paddingBottom: 5}}>Eric Anthony</span>
-                                </p>
-                                <MDBRow>
-                                    <MDBCol size="6">
-                                        <MDBBtn>Accept</MDBBtn>
-                                    </MDBCol>
-                                    <MDBCol size="6">
-                                        <MDBBtn color="danger">Reject</MDBBtn>
-
-                                    </MDBCol>
-                                </MDBRow>
-                            </div>
-
-                            <div className={"notificationItem"}>
-                                <h5 style={{fontSize: 16}}>New Booking Appointment</h5>
-                                <p>#A123123 <span
-                                    style={{fontWeight: "bold", marginLeft: 10, paddingBottom: 5}}>Eric Anthony</span>
-                                </p>
-                                <MDBRow>
-                                    <MDBCol size="6">
-                                        <MDBBtn color={"indigo"}>Accept</MDBBtn>
-                                    </MDBCol>
-                                    <MDBCol size="6">
-                                        <MDBBtn color="danger">Reject</MDBBtn>
-                                    </MDBCol>
-                                </MDBRow>
-                            </div>
-                            <div className={"notificationItem"}>
-                                <h5 style={{fontSize: 16}}>New Booking Appointment</h5>
-                                <p>#A123123 <span
-                                    style={{fontWeight: "bold", marginLeft: 10, paddingBottom: 5}}>Eric Anthony</span>
-                                </p>
-                                <MDBRow>
-                                    <MDBCol size="6">
-                                        <MDBBtn>Accept</MDBBtn>
-                                    </MDBCol>
-                                    <MDBCol size="6">
-                                        <MDBBtn color="danger">Reject</MDBBtn>
-                                    </MDBCol>
-                                </MDBRow>
-                            </div>
-
-
+                            }
                         </div>
                         :
                         null

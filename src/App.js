@@ -17,6 +17,8 @@ import {login, logout} from "./redux/actions";
 import ClinicNavbar from "./screen/component/clinicNavbar";
 import Vet from "./screen/admin/Vet";
 import EditVet from "./screen/admin/EditVet";
+import Chat from "./screen/admin/Chat";
+import ChatRoom from "./screen/admin/ChatRoom";
 
 class App extends React.Component {
 
@@ -41,6 +43,7 @@ class App extends React.Component {
                         <Route path={'/vet'} exact component={Vet}/>
                         <Route path={'/vet/:id'} exact component={EditVet}/>
                         <Route path={'/detailClinic/:clinicId'} exact component={DetailClinic}/>
+                        <Route path={'/chat'} exact component={Chat}/>
                     </BrowserRouter>
                 );
             default:
@@ -83,7 +86,6 @@ class App extends React.Component {
                         }
                         break;
                     case 401:
-
                         // unauthorized
                         toast.error("username / password salah");
                         break;

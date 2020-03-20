@@ -5,10 +5,9 @@ import {
     MDBRow,
 } from "mdbreact";
 import Axios from "axios";
-import {api_url_admin, api_url_clinic, globalErrorHandlers} from "../../global";
+import {api_url_clinic} from "../../global";
 import {connect} from "react-redux";
 import {login} from "../../redux/actions";
-import {toast} from "react-toastify";
 
 class Login extends React.Component {
     state = {
@@ -35,6 +34,7 @@ class Login extends React.Component {
                     id: data.id,
                     role: "clinic"
                 })
+                localStorage.clear()
                 localStorage.setItem('token', data._token)
                 localStorage.setItem('username', data.username)
                 localStorage.setItem('id', data.id)

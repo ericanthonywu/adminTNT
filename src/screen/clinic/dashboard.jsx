@@ -12,6 +12,8 @@ import {api_url_clinic, backend_url} from "../../global";
 import {connect} from "react-redux";
 import Axios from "axios";
 import moment from "moment";
+import {toast} from "react-toastify";
+import {logout} from "../../redux/actions";
 
 class clinicDashboard extends React.Component {
     state = {
@@ -26,6 +28,12 @@ class clinicDashboard extends React.Component {
             },
         })
 
+        socket.on("ban", () => {
+            this.props.logout()
+            toast.error("You has been banned")
+            this.props.history.push("/")
+        });
+
         Axios.post(`${api_url_clinic}clinicShowOngoingAppointment`, {
             token: this.props.token
         }).then(appointmentOngoing => this.setState({appointmentOngoing}))
@@ -35,11 +43,10 @@ class clinicDashboard extends React.Component {
     render() {
         return (
             <MDBContainer fluid className={"mainContainer"}>
-
-
                 <MDBRow className={"contentContainer"}>
                     <MDBCol size="2">
-                        <MDBBtn onClick={() => this.props.history.push("/appointmentHistory")} color="blue" href="#">Booking History</MDBBtn>
+                        <MDBBtn onClick={() => this.props.history.push("/appointmentHistory")} color="blue" href="#">Booking
+                            History</MDBBtn>
                     </MDBCol>
                 </MDBRow>
                 {/*<MDBRow className={"contentContainer"}>*/}
@@ -58,7 +65,7 @@ class clinicDashboard extends React.Component {
                 </MDBRow>
                 <MDBRow className={"contentContainer"}>
                     {
-                        this.state.appointmentOngoing.map(({_id:id,vet,time,user}) =>
+                        this.state.appointmentOngoing.map(({_id: id, vet, time, user}) =>
                             <MDBCol size="12">
                                 <MDBCard className={"cardCustom"} style={{width: "100%", margin: "20px"}}>
                                     <MDBCardBody>
@@ -67,7 +74,10 @@ class clinicDashboard extends React.Component {
                                                 <MDBCardTitle>{user.username}</MDBCardTitle>
                                             </MDBCol>
                                             <MDBCol size="6">
-                                                <MDBCardText style={{textAlign: "right", fontSize: 50}}>{moment(time).format("DD/MM/YYYY HH:mm")}</MDBCardText>
+                                                <MDBCardText style={{
+                                                    textAlign: "right",
+                                                    fontSize: 50
+                                                }}>{moment(time).format("DD/MM/YYYY HH:mm")}</MDBCardText>
                                             </MDBCol>
                                         </MDBRow>
                                         <MDBCardText style={{fontWeight: "bold"}}>Phone Number: &nbsp;
@@ -95,4 +105,4 @@ class clinicDashboard extends React.Component {
 
 }
 
-export default connect(state => state.user)(clinicDashboard)
+export default connect(state => state.user, {logout})(clinicDashboard)

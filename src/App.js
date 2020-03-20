@@ -18,12 +18,10 @@ import ClinicNavbar from "./screen/component/clinicNavbar";
 import Vet from "./screen/admin/Vet";
 import EditVet from "./screen/admin/EditVet";
 import Chat from "./screen/admin/Chat";
-import ChatRoom from "./screen/admin/ChatRoom";
 
 class App extends React.Component {
 
     generateProtectedRoute = role => {
-
         switch (role) {
             case "clinic":
                 return (

@@ -34,14 +34,18 @@ class Dashboard extends React.Component {
         password: "",
         confirm_password: "",
         clinic: [],
-        offset: 0
+        offset: 0,
+        currentOffset: 0,
+        image: [],
+        file: []
     };
 
     toggle = () => this.setState({modal: !this.state.modal});
 
-    handleChangeText = e => this.setState({
-        [e.target.name]: e.target.value
-    });
+    handleChangeText = e =>
+        this.setState({
+            [e.target.name]: e.target.value
+        });
 
     addClinic = e => {
         e.preventDefault();
@@ -64,7 +68,7 @@ class Dashboard extends React.Component {
         }
 
         if (!long) {
-            return this.lat.focus()
+            return this.long.focus()
         }
 
         if (!password) {
@@ -80,16 +84,22 @@ class Dashboard extends React.Component {
             return this.confirm_password.focus()
         }
 
-        Axios.post(`${api_url_admin}addClinic`, {
-            token: this.props.token,
-            username,
-            password,
-            email,
-            address,
-            lat,
-            long,
-        }).then(({id}) => {
-            toast.success("Clinic added");
+        const formdata = new FormData()
+        formdata.append("token", this.props.token)
+        formdata.append("username", username)
+        formdata.append("email", email)
+        formdata.append("password", password)
+        formdata.append("address", address)
+        formdata.append("lat", lat)
+        formdata.append("long", long)
+
+        for (let i = 0; i < this.state.file.length; i++) {
+            formdata.append('image', this.state.file[i])
+        }
+
+        Axios.post(`${api_url_admin}addClinic`, formdata).then(({id}) => {
+            toast.success("Clinic added")
+
             this.setState({
                 modal: false,
                 clinic: [...this.state.clinic, {
@@ -99,8 +109,7 @@ class Dashboard extends React.Component {
                     vet: 0
                 }]
             })
-        })
-            .catch(err => toast.error("Clinic already exist"))
+        }).catch(err => toast.error("Clinic already exist"))
     };
 
     componentDidMount() {
@@ -112,21 +121,50 @@ class Dashboard extends React.Component {
         }))
     }
 
-    addOffset = () => this.state.clinic ? this.setState({
-        offset: this.state.offset + 1
-    }, () => this.paginationClinic(this.state.offset + 8)) : null;
+    addOffset = () => this.state.clinic
+        ? // if
+        this.setState({
+            offset: this.state.offset + 1,
+            currentOffset: this.state.currentOffset + 8
+        }, this.paginationClinic)
+        : // else
+        null;
 
-    removeOffset = () => this.state.offset > 0 ? this.setState({
-        offset: this.state.offset - 1
-    }, () => this.paginationClinic(this.state.offset - 8)) : null;
+    removeOffset = () => this.state.offset > 0
+        ? // if
+        this.setState({
+            offset: this.state.offset - 1,
+            currentOffset: this.state.currentOffset - 8
+        }, this.paginationClinic)
+        : // else
+        null;
 
-    paginationClinic = offset => {
+    paginationClinic = () =>
         Axios.post(`${api_url_admin}showClinic`, {
             token: this.props.token,
-            offset: offset
-        }).then(data => this.setState({
-            vetData: data
-        }, () => console.log(data)))
+            offset: this.state.currentOffset
+        }).then(vetData => this.setState({vetData}))
+
+
+    uploadFile = e => {
+        if (e.target.files.length) { //cek file
+            // const files = Array.from(e.target.files); //get files array
+            this.setState({
+                file: e.target.files
+            });
+            // Promise.all(files.map(file => //mapping files
+            //     new Promise((resolve, reject) => {
+            //         const reader = new FileReader();
+            //         reader.addEventListener('load', e => {
+            //             resolve(e.target.result); //return images
+            //         });
+            //         reader.addEventListener('error', reject); //put error handler
+            //         reader.readAsDataURL(file);
+            //     })
+            // ))
+            //     .then(image => this.setState({image}))
+            //     .catch(err => toast.error(`Error happened with data : ${JSON.stringify(err)}`));
+        }
     }
 
     username = React.createRef();
@@ -138,7 +176,6 @@ class Dashboard extends React.Component {
     long = React.createRef();
 
     render() {
-
         return (
             <MDBContainer fluid className={"mainContainer"}>
                 <MDBModal className={"modalForm"} isOpen={this.state.modal} toggle={this.toggle}>
@@ -161,6 +198,9 @@ class Dashboard extends React.Component {
                             <MDBInput validate inputRef={input => this.confirm_password = input}
                                       label={"confirm password"} type={"password"} name={"confirm_password"}
                                       onChange={this.handleChangeText}/>
+                            <MDBInput validate type={"file"} onChange={this.uploadFile} multiple
+                                      accept={'.jpg,.jpeg,.png,.pneg'}/>
+                            <p>{this.state.image}</p>
                         </MDBModalBody>
                         <MDBModalFooter>
                             <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
@@ -190,7 +230,8 @@ class Dashboard extends React.Component {
                                         <MDBCardText>
                                             Size: {vet} Veteranians
                                         </MDBCardText>
-                                        <MDBBtn onClick={e => this.props.history.push(`detailClinic/${_id}`)}>View</MDBBtn>
+                                        <MDBBtn
+                                            onClick={() => this.props.history.push(`detailClinic/${_id}`)}>View</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             )

@@ -20,6 +20,7 @@ import moment from "moment";
 import Axios from "axios";
 import {toast} from "react-toastify";
 import {connect} from "react-redux";
+import Swal from 'sweetalert'
 
 class Vet extends React.Component {
     state = {
@@ -34,22 +35,25 @@ class Vet extends React.Component {
         long: "",
         modal: false,
         offset: 0,
+        realOffset: 0,
         vetData: [],
         editState: {}
     }
 
     addOffset = () => this.state.vetData ? this.setState({
-        offset: this.state.offset + 1
-    }, () => this.paginationVet(this.state.offset + 8)) : null;
+        offset: this.state.offset + 1,
+        realOffset: this.state.realOffset + 8,
+    }, this.paginationVet) : null;
 
     removeOffset = () => this.state.offset > 0 ? this.setState({
-        offset: this.state.offset - 1
-    }, () => this.paginationVet(this.state.offset - 8)) : null;
+        offset: this.state.offset - 1,
+        realOffset: this.state.realOffset - 8
+    }, this.paginationVet) : null;
 
-    paginationVet = offset => {
+    paginationVet = () => {
         Axios.post(`${api_url_admin}showAllVet`, {
             token: this.props.token,
-            offset: offset
+            offset: this.state.realOffset
         }).then(data => this.setState({
             vetData: data
         }, () => console.log(data)))
@@ -133,17 +137,29 @@ class Vet extends React.Component {
     }
 
     ban = (id, index, ban) => {
-        Axios.post(`${api_url_admin}banVetClinic`, {
-            token: this.props.token,
-            vetId: id,
-            ban: !ban
-        }).then(() => {
-            const {vetData} = this.state
-            vetData[index].ban = !ban
-            this.setState({
-                vetData: vetData
-            })
+        Swal({
+            title: "Are you sure?",
+            text: `This vet will be banned`,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
+            .then(willDelete => {
+                if (willDelete) {
+                    Axios.post(`${api_url_admin}banVetClinic`, {
+                        token: this.props.token,
+                        vetId: id,
+                        ban: !ban
+                    }).then(() => {
+                        const {vetData} = this.state
+                        vetData[index].ban = !ban
+                        this.setState({
+                            vetData: vetData
+                        })
+                        toast.success("Vet banned")
+                    })
+                }
+            })
     }
 
     render() {

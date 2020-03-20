@@ -18,7 +18,7 @@ import {
     MDBModalFooter
 } from "mdbreact";
 import Axios from "axios";
-import {api_url_admin} from "../../global";
+import {api_url_admin, backend_url} from "../../global";
 import {connect} from "react-redux";
 import Error404 from "../Error404";
 import swal from "sweetalert";
@@ -28,7 +28,7 @@ import {toast} from "react-toastify";
 class DetailClinic extends React.Component {
     state = {
         notFound: false,
-        clinic: {vet: [], session: {coordinates: []}},
+        clinic: {vet: [], photo:[], session: {coordinates: []}},
         modal: false
     }
 
@@ -166,6 +166,10 @@ class DetailClinic extends React.Component {
                             </MDBCardText>
                             <MDBCardText>
                                 Location: <span className="font-weight-bold">{this.state.clinic.address}</span>
+                            </MDBCardText>
+                            <MDBCardText>
+                                Image: <br/>
+                                {this.state.clinic.photo.map(photo => <img src={`${backend_url}uploads/clinic/${photo}`} width={100} height={100} alt={photo}/>)}
                             </MDBCardText>
                             <MDBTable>
                                 <MDBTableHead>

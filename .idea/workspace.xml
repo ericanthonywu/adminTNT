@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/screen/admin/Chat.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screen/admin/ChatRoom.jsx" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="add chat screen hidden">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontendadmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontendadmin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/_custom-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/_custom-styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/appointmentHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/appointmentHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +60,7 @@
       </list>
     </option>
   </component>
+  <component name="GOROOT" path="$USER_HOME$/sdk/go1.13.4" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -73,14 +79,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screen/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -88,7 +99,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -153,7 +164,19 @@
       <workItem from="1582877789129" duration="8048000" />
       <workItem from="1582968334979" duration="598000" />
       <workItem from="1582970439285" duration="4777000" />
-      <workItem from="1582990386799" duration="8397000" />
+      <workItem from="1582990386799" duration="9770000" />
+      <workItem from="1583251410748" duration="186000" />
+      <workItem from="1583314431542" duration="1179000" />
+      <workItem from="1583500031404" duration="1175000" />
+      <workItem from="1583575266553" duration="1533000" />
+      <workItem from="1583583571190" duration="370000" />
+      <workItem from="1583761947811" duration="4006000" />
+      <workItem from="1583841572995" duration="131000" />
+      <workItem from="1583933462248" duration="1214000" />
+      <workItem from="1584428009486" duration="3829000" />
+      <workItem from="1584441619268" duration="285000" />
+      <workItem from="1584443282181" duration="3052000" />
+      <workItem from="1584728306617" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -197,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583075673485</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add chat screen hidden">
+      <created>1583246053388</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583246053388</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +255,8 @@
     <MESSAGE value="clinic list vet revisi" />
     <MESSAGE value="clinic and admin nunggu revisi" />
     <MESSAGE value="update .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="update .idea" />
+    <MESSAGE value="add chat screen hidden" />
+    <option name="LAST_COMMIT_MESSAGE" value="add chat screen hidden" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582431834752">
@@ -244,42 +275,42 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1582811032413" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1583075673029">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1583336071506">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1583075673029" />
-    <state width="1398" height="316" key="GridCell.Tab.0.bottom" timestamp="1583075676149">
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1583336071506" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom" timestamp="1584709345611">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="316" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1583075676149" />
-    <state width="1398" height="316" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1582990230164" />
-    <state width="1398" height="316" key="GridCell.Tab.0.center" timestamp="1583075676147">
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584709345611" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1584441460162" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center" timestamp="1584709345606">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="316" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1583075676147" />
-    <state width="1398" height="316" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1582990230162" />
-    <state width="1398" height="316" key="GridCell.Tab.0.left" timestamp="1583075676145">
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584709345606" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1584441460160" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left" timestamp="1584709345603">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="316" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1583075676145" />
-    <state width="1398" height="316" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1582990230161" />
-    <state width="1398" height="316" key="GridCell.Tab.0.right" timestamp="1583075676148">
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584709345603" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1584441460160" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right" timestamp="1584709345608">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="316" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1583075676148" />
-    <state width="1398" height="316" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1582990230163" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584709345608" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1584441460161" />
     <state x="332" y="70" key="NewModule_or_Project.wizard" timestamp="1582550445275">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="332" y="70" key="NewModule_or_Project.wizard/0.0.1440.900@0.0.1440.900" timestamp="1582550445275" />
-    <state x="221" y="63" key="SettingsEditor" timestamp="1582800880009">
+    <state x="221" y="63" key="SettingsEditor" timestamp="1583762086954">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1582800880009" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1583075675149">
+    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583762086954" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1583246056003">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1583075675149" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1583246056003" />
     <state x="456" y="136" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582431909298">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -288,10 +319,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="380" y="328" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1582990404043" />
-    <state x="291" y="159" width="858" height="582" key="find.popup" timestamp="1582879378106">
+    <state x="291" y="159" width="858" height="582" key="find.popup" timestamp="1583765557401">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="291" y="159" width="858" height="582" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1582879378106" />
+    <state x="291" y="159" width="858" height="582" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1583765557401" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583232475008">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

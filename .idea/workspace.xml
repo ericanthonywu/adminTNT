@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="add chat screen hidden">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/AddBlog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/Blog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/EditBlog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontendadmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontendadmin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/clinic/appointmentHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/appointmentHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/clinic/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/clinic/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/component/adminNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/component/adminNavbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -64,13 +64,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
   <component name="ProjectId" id="1XCYCC1pkM467gSCJfqCGooiDdr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -83,7 +85,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screen/admin" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screen/admin/Blog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -103,15 +106,17 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/screen" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/screen/admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screen/admin/Blog" />
       <recent name="$PROJECT_DIR$/src/screen/admin" />
       <recent name="$PROJECT_DIR$/src/screen/clinic" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screen/admin/Blog" />
+      <recent name="$PROJECT_DIR$/src/screen" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/screen/admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,7 +181,37 @@
       <workItem from="1584428009486" duration="3829000" />
       <workItem from="1584441619268" duration="285000" />
       <workItem from="1584443282181" duration="3052000" />
-      <workItem from="1584728306617" duration="773000" />
+      <workItem from="1584728306617" duration="1311000" />
+      <workItem from="1584790731955" duration="1047000" />
+      <workItem from="1584792691200" duration="195000" />
+      <workItem from="1584809724574" duration="5916000" />
+      <workItem from="1584954466965" duration="972000" />
+      <workItem from="1585040112143" duration="1135000" />
+      <workItem from="1585041299042" duration="584000" />
+      <workItem from="1585045699015" duration="1297000" />
+      <workItem from="1585062357038" duration="326000" />
+      <workItem from="1585064715749" duration="1249000" />
+      <workItem from="1585492123419" duration="246000" />
+      <workItem from="1585645027358" duration="887000" />
+      <workItem from="1585673590591" duration="456000" />
+      <workItem from="1585749163818" duration="95000" />
+      <workItem from="1585749296338" duration="598000" />
+      <workItem from="1586242734883" duration="1007000" />
+      <workItem from="1587908825782" duration="8330000" />
+      <workItem from="1588154137678" duration="3840000" />
+      <workItem from="1588614575841" duration="92000" />
+      <workItem from="1588649347288" duration="787000" />
+      <workItem from="1588675296057" duration="465000" />
+      <workItem from="1588736342945" duration="595000" />
+      <workItem from="1588953285802" duration="593000" />
+      <workItem from="1589487970817" duration="247000" />
+      <workItem from="1589550719940" duration="952000" />
+      <workItem from="1589558880570" duration="1976000" />
+      <workItem from="1589720367783" duration="557000" />
+      <workItem from="1589724437423" duration="2090000" />
+      <workItem from="1589903630356" duration="555000" />
+      <workItem from="1591551982885" duration="161000" />
+      <workItem from="1591554004685" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -227,24 +262,30 @@
       <option name="project" value="LOCAL" />
       <updated>1583246053388</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add clinic photo">
+      <created>1584729281693</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584729281694</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -256,7 +297,8 @@
     <MESSAGE value="clinic and admin nunggu revisi" />
     <MESSAGE value="update .idea" />
     <MESSAGE value="add chat screen hidden" />
-    <option name="LAST_COMMIT_MESSAGE" value="add chat screen hidden" />
+    <MESSAGE value="add clinic photo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add clinic photo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582431834752">
@@ -267,38 +309,38 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="444" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1582706938364" />
-    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582363637424">
+    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585749221998">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1582363637424" />
+    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1585749221998" />
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582811032413">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1582811032413" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1583336071506">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1584729281540">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1583336071506" />
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom" timestamp="1584709345611">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584729281540" />
+    <state width="1398" height="223" key="GridCell.Tab.0.bottom" timestamp="1588614520188">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584709345611" />
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1584441460162" />
-    <state width="1398" height="209" key="GridCell.Tab.0.center" timestamp="1584709345606">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587981666597" />
+    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588614520188" />
+    <state width="1398" height="223" key="GridCell.Tab.0.center" timestamp="1588614520186">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584709345606" />
-    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1584441460160" />
-    <state width="1398" height="209" key="GridCell.Tab.0.left" timestamp="1584709345603">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="223" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587981666595" />
+    <state width="1398" height="223" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588614520186" />
+    <state width="1398" height="223" key="GridCell.Tab.0.left" timestamp="1588614520185">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584709345603" />
-    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1584441460160" />
-    <state width="1398" height="209" key="GridCell.Tab.0.right" timestamp="1584709345608">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="223" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587981666595" />
+    <state width="1398" height="223" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588614520185" />
+    <state width="1398" height="223" key="GridCell.Tab.0.right" timestamp="1588614520187">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584709345608" />
-    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1584441460161" />
+    <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587981666596" />
+    <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588614520187" />
     <state x="332" y="70" key="NewModule_or_Project.wizard" timestamp="1582550445275">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -307,22 +349,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583762086954" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1583246056003">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1584729285164">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1583246056003" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584729285164" />
     <state x="456" y="136" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582431909298">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="456" y="136" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1582431909298" />
-    <state x="380" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1582990404043">
+    <state x="380" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585756185236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="380" y="328" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1582990404043" />
+    <state x="380" y="343" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1585756185236" />
     <state x="291" y="159" width="858" height="582" key="find.popup" timestamp="1583765557401">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="291" y="159" width="858" height="582" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1583765557401" />
+    <state x="97" y="13" key="new project wizard" timestamp="1584792187860">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="97" y="13" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1584792187860" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583232475008">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

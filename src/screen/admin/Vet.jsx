@@ -118,7 +118,7 @@ class Vet extends React.Component {
                         KTP: KTP,
                         email: vet_email,
                         createdAt: Date.now(),
-                        cert_id: cert_id,
+                        cert_id,
                         ban: false,
                         session: {
                             coordinates: [long, lat]

@@ -14,7 +14,7 @@ import {
     MDBPageItem,
     MDBPageNav,
 
-    MDBModalBody, MDBModalFooter, MDBInput
+    MDBModalBody, MDBModalFooter, MDBInput, MDBCollapse
 } from "mdbreact";
 import {toast} from "react-toastify";
 import Axios from "axios";
@@ -198,9 +198,7 @@ class Dashboard extends React.Component {
                             <MDBInput validate inputRef={input => this.confirm_password = input}
                                       label={"confirm password"} type={"password"} name={"confirm_password"}
                                       onChange={this.handleChangeText}/>
-                            <MDBInput validate type={"file"} onChange={this.uploadFile} multiple
-                                      accept={'.jpg,.jpeg,.png,.pneg'}/>
-                            <p>{this.state.image}</p>
+                            <MDBInput validate type={"file"} onChange={this.uploadFile} multiple accept={'.jpg,.jpeg,.png,.pneg'}/>
                         </MDBModalBody>
                         <MDBModalFooter>
                             <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
@@ -211,10 +209,13 @@ class Dashboard extends React.Component {
 
                 <MDBRow className={"contentContainer"}>
                     <MDBCol size="2">
-                        <MDBBtn onClick={() => this.setState({modal: true})} color="blue" href="#">Add Clinic</MDBBtn>
+                        <MDBBtn onClick={() => this.setState({modal: true})} color="blue">Add Clinic</MDBBtn>
                     </MDBCol>
                     <MDBCol size="2">
-                        <MDBBtn onClick={() => this.props.history.push("/vet")} color="blue" href="#">Add Vet</MDBBtn>
+                        <MDBBtn onClick={() => this.props.history.push("/vet")} color="blue">Add Vet</MDBBtn>
+                    </MDBCol>
+                    <MDBCol size="2">
+                        <MDBBtn onClick={() => this.props.history.push("/blog")} color="blue">Add Blog</MDBBtn>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow className={"contentContainer"}>

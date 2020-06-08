@@ -84,12 +84,14 @@ class DetailClinic extends React.Component {
                     })
                 }
             })
+            .catch(err => toast.error(`error with ${JSON.stringify(err)}`))
     }
 
     toggle = () => this.setState({modal: !this.state.modal})
 
     handleChangeText = e => {
         const {name, value} = e.target
+        // eslint-disable-next-line default-case
         switch (name) {
             case "long":
                 return this.setState({

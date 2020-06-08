@@ -1,13 +1,13 @@
 import React from "react";
 import {
-    MDBBtn,
+    MDBBtn, MDBCol,
     MDBCollapse,
     MDBFormInline, MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarNav,
     MDBNavbarToggler,
     MDBNavItem,
-    MDBNavLink
+    MDBNavLink, MDBRow
 } from "mdbreact";
 import {connect} from "react-redux";
 import {logout} from "../../redux/actions";
@@ -53,7 +53,6 @@ class AdminNavbar extends React.Component {
                             <MDBBtn onClick={this.logout} className="black-text">Logout
                             </MDBBtn>
                         </MDBNavItem>
-
                     </MDBNavbarNav>
                 </MDBCollapse>
             </MDBNavbar>

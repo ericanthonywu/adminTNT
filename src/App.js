@@ -18,6 +18,10 @@ import ClinicNavbar from "./screen/component/clinicNavbar";
 import Vet from "./screen/admin/Vet";
 import EditVet from "./screen/admin/EditVet";
 import Chat from "./screen/admin/Chat";
+import Blog from "./screen/admin/Blog/Blog";
+import AddBlog from "./screen/admin/Blog/AddBlog";
+import EditBlog from "./screen/admin/Blog/EditBlog";
+
 
 class App extends React.Component {
 
@@ -39,6 +43,9 @@ class App extends React.Component {
                         <Navbar {...this.props}/>
                         <Route path={'/dashboard'} exact component={Dashboard}/>
                         <Route path={'/vet'} exact component={Vet}/>
+                        <Route path={'/blog'} exact component={Blog}/>
+                        <Route path={'/blog/add'} exact component={AddBlog}/>
+                        <Route path={'/blog/edit/:id'} exact component={EditBlog}/>
                         <Route path={'/vet/:id'} exact component={EditVet}/>
                         <Route path={'/detailClinic/:clinicId'} exact component={DetailClinic}/>
                         <Route path={'/chat'} exact component={Chat}/>
@@ -91,6 +98,8 @@ class App extends React.Component {
                         // verified but has error (?)
                         toast.error("Email status not verified")
                         break;
+                    default:
+
                 }
             }
             return Promise.reject(response);

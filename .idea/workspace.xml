@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="update trakhir">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="add start and build npm configuration">
+      <change beforePath="$PROJECT_DIR$/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +223,7 @@
       <workItem from="1592485119852" duration="982000" />
       <workItem from="1592490208216" duration="154000" />
       <workItem from="1592539351742" duration="12000" />
+      <workItem from="1592539516595" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -287,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591625009999</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add start and build npm configuration">
+      <created>1592539666220</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592539666220</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +325,8 @@
     <MESSAGE value="add chat screen hidden" />
     <MESSAGE value="add clinic photo" />
     <MESSAGE value="update trakhir" />
-    <option name="LAST_COMMIT_MESSAGE" value="update trakhir" />
+    <MESSAGE value="add start and build npm configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add start and build npm configuration" />
   </component>
   <component name="WindowStateProjectService">
     <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585749221998">
@@ -348,29 +357,17 @@
     </state>
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587981666596" />
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588614520187" />
-    <state x="221" y="63" key="SettingsEditor" timestamp="1583762086954">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1592539667772">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583762086954" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1591625011889">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1591625011889" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592539667772" />
     <state x="380" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585756185236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="380" y="343" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1585756185236" />
-    <state x="291" y="159" width="858" height="582" key="find.popup" timestamp="1583765557401">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="291" y="159" width="858" height="582" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1583765557401" />
     <state x="97" y="13" key="new project wizard" timestamp="1584792187860">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="97" y="13" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1584792187860" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583232475008">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1583232475008" />
   </component>
 </project>

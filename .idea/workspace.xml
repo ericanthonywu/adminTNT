@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/AddBlog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/Blog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screen/admin/Blog/EditBlog.jsx" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="update trakhir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/detailclinic.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/component/adminNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/component/adminNavbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +218,11 @@
       <workItem from="1589724437423" duration="2090000" />
       <workItem from="1589903630356" duration="555000" />
       <workItem from="1591551982885" duration="161000" />
-      <workItem from="1591554004685" duration="1124000" />
+      <workItem from="1591554004685" duration="2034000" />
+      <workItem from="1591718363857" duration="951000" />
+      <workItem from="1592485119852" duration="982000" />
+      <workItem from="1592490208216" duration="154000" />
+      <workItem from="1592539351742" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -269,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584729281694</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update trakhir">
+      <created>1591625009999</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591625009999</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,25 +316,14 @@
     <MESSAGE value="update .idea" />
     <MESSAGE value="add chat screen hidden" />
     <MESSAGE value="add clinic photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add clinic photo" />
+    <MESSAGE value="update trakhir" />
+    <option name="LAST_COMMIT_MESSAGE" value="update trakhir" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582431834752">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1582431834752" />
-    <state x="444" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582706938364">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="444" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1582706938364" />
     <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585749221998">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1585749221998" />
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582811032413">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1582811032413" />
     <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1584729281540">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -341,22 +348,14 @@
     </state>
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587981666596" />
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588614520187" />
-    <state x="332" y="70" key="NewModule_or_Project.wizard" timestamp="1582550445275">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="332" y="70" key="NewModule_or_Project.wizard/0.0.1440.900@0.0.1440.900" timestamp="1582550445275" />
     <state x="221" y="63" key="SettingsEditor" timestamp="1583762086954">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583762086954" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1584729285164">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1591625011889">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584729285164" />
-    <state x="456" y="136" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582431909298">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="456" y="136" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1582431909298" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1591625011889" />
     <state x="380" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585756185236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

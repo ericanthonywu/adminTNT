@@ -1,5 +1,5 @@
 // const host = '35.186.149.219', port = false, prefix = 'user';
-const host = 'http://34.101.136.70/', port = "";
+const host = '34.101.136.70', port = "";
 
 export const backend_url = `http://${host}${port ? `:${port}` : ""}/`;
 export const api_url_admin = `${backend_url}admin/`;

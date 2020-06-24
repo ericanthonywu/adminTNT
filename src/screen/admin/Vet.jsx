@@ -196,7 +196,7 @@ class Vet extends React.Component {
                                        className="form-control"/>
                                 <br/>
                                 <label className="grey-text">
-                                    Experience year
+                                    First year work experience
                                 </label>
                                 <input name={"expYear"} type={"number"} min={0} max={new Date().getFullYear()}
                                        onChange={this.handleChange}

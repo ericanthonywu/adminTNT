@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="add start and build npm configuration">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="remove recursive function">
       <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,6 +227,7 @@
       <workItem from="1592651381701" duration="424000" />
       <workItem from="1592831043234" duration="600000" />
       <workItem from="1592883625591" duration="232000" />
+      <workItem from="1593002130920" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -299,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592539666220</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="remove recursive function">
+      <created>1593002263455</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593002263455</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +337,8 @@
     <MESSAGE value="add clinic photo" />
     <MESSAGE value="update trakhir" />
     <MESSAGE value="add start and build npm configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="add start and build npm configuration" />
+    <MESSAGE value="remove recursive function" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove recursive function" />
   </component>
   <component name="WindowStateProjectService">
     <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585749221998">
@@ -361,10 +369,10 @@
     </state>
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587981666596" />
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588614520187" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1592539667772">
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1593002265042">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592539667772" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1593002265042" />
     <state x="380" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585756185236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

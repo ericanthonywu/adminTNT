@@ -205,18 +205,6 @@ class Vet extends React.Component {
                                 <MDBInput type="textarea" name={"address"} label="Address" onChange={this.handleChange}
                                           outline/>
                                 <br/>
-                                <label className="grey-text">
-                                    Lat
-                                </label>
-                                <input name={"lat"} onChange={this.handleChange}
-                                       className="form-control"/>
-                                <br/>
-                                <label className="grey-text">
-                                    long
-                                </label>
-                                <input name={"long"} onChange={this.handleChange}
-                                       className="form-control"/>
-                                <br/>
                                 <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
                                     Password
                                 </label>

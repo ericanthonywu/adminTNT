@@ -96,7 +96,7 @@ class Vet extends React.Component {
     addVet = e => {
         e.preventDefault()
         const {cert_id, KTP, vet_name, vet_email, expYear, address, password, lat, long} = this.state
-        if (cert_id && KTP && vet_email && vet_name && expYear && address && password && lat && long) {
+        // if (cert_id && KTP && vet_email && vet_name && expYear && address && password && lat && long) {
             Axios.post(`${api_url_admin}addVet`, {
                 token: this.props.token,
                 cert_id: cert_id,
@@ -131,9 +131,9 @@ class Vet extends React.Component {
                     toast.warn(err.data.msg)
                 }
             })
-        } else {
-            toast.warn("Input not yet filled")
-        }
+        // } else {
+        //     toast.warn("Input not yet filled")
+        // }
     }
 
     ban = (id, index, ban) => {

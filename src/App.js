@@ -130,7 +130,8 @@ class App extends React.Component {
 
         }).catch(err => {
             if (!err) {
-                return this.checkValidToken(token, username, id, role)
+                // return this.checkValidToken(token, username, id, role)
+                return toast.error("No Connection, please refresh web")
             }
             this.props.history.push("/");
             this.props.logout()

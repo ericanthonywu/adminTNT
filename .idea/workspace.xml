@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="add start and build npm configuration">
-      <change beforePath="$PROJECT_DIR$/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +225,9 @@
       <workItem from="1592490208216" duration="154000" />
       <workItem from="1592539351742" duration="12000" />
       <workItem from="1592539516595" duration="429000" />
+      <workItem from="1592651381701" duration="424000" />
+      <workItem from="1592831043234" duration="600000" />
+      <workItem from="1592883625591" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>

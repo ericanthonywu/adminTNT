@@ -29,19 +29,22 @@ class Login extends React.Component {
                 loading: true
             })
             Axios.post(`${api_url_admin}login`, {
-                username: username,
-                password: password
+                username,
+                password,
             }).then(data => {
-                localStorage.setItem('token', data._token)
+                localStorage.setItem('token', data.token)
                 localStorage.setItem('username', data.username)
                 localStorage.setItem('id', data.id)
                 localStorage.setItem('role', 'admin')
+
                 this.props.login({
-                    token: data._token,
+                    token: data.token,
                     username: data.username,
                     id: data.id,
                     role: 'admin'
                 })
+
+                Axios.defaults.headers.common = {token: data.token}; // set default header
                 this.props.history.push("/admin/dashboard")
             }).catch(() => toast.error("Username atau password salah"))
                 .finally(() => this.setState({loading: false}))
@@ -55,6 +58,22 @@ class Login extends React.Component {
     }
     username = React.createRef()
     password = React.createRef()
+
+    componentDidMount() {
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("username");
+        const id = localStorage.getItem("id");
+        const role = localStorage.getItem("role");
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('username', username)
+        localStorage.setItem('id', id)
+        localStorage.setItem('role', role)
+
+        if (token && username && id && role){
+            return this.props.history.push("/admin/dashboard")
+        }
+    }
 
     render() {
         return (

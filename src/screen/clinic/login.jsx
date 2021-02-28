@@ -25,20 +25,23 @@ class Login extends React.Component {
         const {username, password} = this.state
         if (username && password) {
             Axios.post(`${api_url_clinic}login`, {
-                username: username,
-                password: password
+                username,
+                password,
             }).then(data => {
                 this.props.login({
-                    token: data._token,
+                    token: data.token,
                     username: data.username,
                     id: data.id,
                     role: "clinic"
                 })
                 localStorage.clear()
-                localStorage.setItem('token', data._token)
+
+                localStorage.setItem('token', data.token)
                 localStorage.setItem('username', data.username)
                 localStorage.setItem('id', data.id)
                 localStorage.setItem('role', "clinic")
+
+                Axios.defaults.headers.common = {token: data.token}; // set default header
 
                 this.props.history.push("/dashboard")
             })

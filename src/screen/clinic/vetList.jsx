@@ -2,7 +2,6 @@ import React from "react";
 import {
     MDBBtn, MDBCard, MDBCardBody, MDBCardText, MDBCardTitle,
     MDBCol,
-    MDBCollapse,
     MDBContainer, MDBInput, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader,
     MDBNavbar,
     MDBNavbarBrand,
@@ -27,19 +26,13 @@ class vetList extends React.Component {
 
     componentDidMount() {
         Axios.post(`${api_url_clinic}showVetClinic`, {
-            token: this.props.token,
             offset: this.state.offset
-        }).then(data => {
-            this.setState({
-                clinicVet: data.vet
-            })
-        })
+        }).then(clinicVet => this.setState({clinicVet}))
     }
 
     search = e => {
         // if(e.target.value.length > 3) {
         Axios.post(`${api_url_clinic}searchVetClinic`, {
-            token: this.props.token,
             keyword: e.target.value
         }).then(data => {
             this.setState({
@@ -66,9 +59,9 @@ class vetList extends React.Component {
                         toast.success(`Poof! Vet ${username} has been added to your clinic!`)
                         const {clinicVet} = this.state
                         clinicVet.push(({
-                            id: id,
-                            username: username,
-                            id_cert: id_cert,
+                            id,
+                            username,
+                            id_cert,
                             createdAt: Date.now()
                         }))
                         this.setState({

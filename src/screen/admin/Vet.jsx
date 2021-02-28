@@ -60,12 +60,10 @@ class Vet extends React.Component {
     }
 
     componentDidMount() {
-        Axios.post(`${api_url_admin}showAllVet`, {
-            token: this.props.token,
-        }).then(data => this.setState({
-            vetData: data
-        }, () => console.log(data)))
-
+        Axios.post(`${api_url_admin}showAllVet`).then(vetData => {
+            console.log(vetData)
+            this.setState({vetData})
+        })
     }
 
     handleChange = e => {
@@ -256,11 +254,19 @@ class Vet extends React.Component {
                                             <MDBCardText small>
                                                 No. KTP: {KTP}
                                             </MDBCardText>
-                                            <MDBCardText small>
-                                                Location: <a target={"_blank"}
-                                                             href={`http://maps.google.com/maps?z=12&t=m&q=loc:${session.coordinates[1]}+-${session.coordinates[0]}`}>see
-                                                on google maps</a>
-                                            </MDBCardText>
+                                            {
+                                                session.coordinates
+                                                ?
+                                                    <MDBCardText small>
+                                                        Location: <a target={"_blank"}
+                                                                     href={`http://maps.google.com/maps?z=12&t=m&q=loc:${session.coordinates[1]}+-${session.coordinates[0]}`}>see
+                                                        on google maps</a>
+                                                    </MDBCardText>
+                                                        :
+                                                        <MDBCardText small>
+                                                            Location:
+                                                        </MDBCardText>
+                                            }
                                             <MDBCardText small>
                                                 {moment(createdAt).format("DD MMM YYYY")}
                                             </MDBCardText>

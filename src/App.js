@@ -62,8 +62,22 @@ class App extends React.Component {
         const id = localStorage.getItem("id");
         const role = localStorage.getItem("role");
 
+        localStorage.setItem('token', token)
+        localStorage.setItem('username', username)
+        localStorage.setItem('id', id)
+        localStorage.setItem('role', role)
+
+        this.props.login({
+            token,
+            username,
+            id,
+            role
+        })
+
+        Axios.defaults.headers.common = {token: this.props.token || token}; // set default header
+
         //global axios handler
-        Axios.interceptors.response.use(res => res.data, err => {
+        Axios.interceptors.response.use(({data: {data}}) => data, err => {
             const {response} = err;
             if (!response) {
                 toast.error("No Connection")
@@ -78,7 +92,7 @@ class App extends React.Component {
                     case 500:
                         // error server like mongodb, etc
                         console.log(response.data); //TODO: Remove on Prod
-                        const {errmsg, code} = response.data
+                        const {errmsg, code} = response.data.error
                         switch (code) {
                             case 11000:
                                 Object.keys("keyValue").forEach(key => {
@@ -104,12 +118,6 @@ class App extends React.Component {
             }
             return Promise.reject(response);
         });
-
-        if (token && username && id && (role === "admin" || role === "clinic")) {
-            this.checkValidToken(token, username, id, role)
-        } else {
-            this.props.logout()
-        }
     }
 
     checkValidToken = (token, username, id, role) => {

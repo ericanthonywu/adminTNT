@@ -19,8 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="update">
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="update backend url">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/vet.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/clinic/vetList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/clinic/vetList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +255,7 @@
       <workItem from="1614259844694" duration="951000" />
       <workItem from="1614369201645" duration="608000" />
       <workItem from="1614431414018" duration="402000" />
-      <workItem from="1614502589072" duration="138000" />
+      <workItem from="1614502589072" duration="7486000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -332,7 +341,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614260784913</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update backend">
+      <created>1614503147969</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614503147969</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update backend url">
+      <created>1614503224160</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614503224160</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +388,8 @@
     <MESSAGE value="add start and build npm configuration" />
     <MESSAGE value="remove recursive function" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update backend" />
+    <MESSAGE value="update backend url" />
+    <option name="LAST_COMMIT_MESSAGE" value="update backend url" />
   </component>
 </project>

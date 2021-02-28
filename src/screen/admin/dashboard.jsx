@@ -13,8 +13,7 @@ import {
     MDBPagination,
     MDBPageItem,
     MDBPageNav,
-
-    MDBModalBody, MDBModalFooter, MDBInput, MDBCollapse
+    MDBModalBody, MDBModalFooter, MDBInput
 } from "mdbreact";
 import {toast} from "react-toastify";
 import Axios from "axios";
@@ -85,7 +84,6 @@ class Dashboard extends React.Component {
         }
 
         const formdata = new FormData()
-        formdata.append("token", this.props.token)
         formdata.append("username", username)
         formdata.append("email", email)
         formdata.append("password", password)
@@ -109,16 +107,16 @@ class Dashboard extends React.Component {
                     vet: 0
                 }]
             })
-        }).catch(err => toast.error("Clinic already exist"))
+        })
     };
 
     componentDidMount() {
         Axios.post(`${api_url_admin}showClinic`, {
-            token: this.props.token,
             offset: this.state.offset
-        }).then(data => this.setState({
-            clinic: data
-        }))
+        }).then(clinic => {
+            console.log(clinic)
+            this.setState({clinic})
+        })
     }
 
     addOffset = () => this.state.clinic

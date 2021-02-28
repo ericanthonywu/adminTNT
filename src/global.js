@@ -1,4 +1,4 @@
-const host = 'http://34.101.84.79', port = "3000";
+const host = 'http://34.101.188.52/', port = "3000";
 
 export const backend_url = `http://${host}${port ? `:${port}` : ""}/`;
 export const api_url_admin = `${backend_url}admin/`;

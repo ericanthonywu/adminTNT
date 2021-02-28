@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="remove recursive function">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,13 +128,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,7 +243,10 @@
       <workItem from="1592831043234" duration="600000" />
       <workItem from="1592883625591" duration="232000" />
       <workItem from="1593002130920" duration="308000" />
-      <workItem from="1614259844694" duration="588000" />
+      <workItem from="1614259844694" duration="951000" />
+      <workItem from="1614369201645" duration="608000" />
+      <workItem from="1614431414018" duration="402000" />
+      <workItem from="1614502589072" duration="138000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -324,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593002263455</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1614260784913</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614260784913</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,48 +364,7 @@
     <MESSAGE value="update trakhir" />
     <MESSAGE value="add start and build npm configuration" />
     <MESSAGE value="remove recursive function" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove recursive function" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585749221998">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="408" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1585749221998" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1584729281540">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584729281540" />
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom" timestamp="1588614520188">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587981666597" />
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588614520188" />
-    <state width="1398" height="223" key="GridCell.Tab.0.center" timestamp="1588614520186">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587981666595" />
-    <state width="1398" height="223" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588614520186" />
-    <state width="1398" height="223" key="GridCell.Tab.0.left" timestamp="1588614520185">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587981666595" />
-    <state width="1398" height="223" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588614520185" />
-    <state width="1398" height="223" key="GridCell.Tab.0.right" timestamp="1588614520187">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587981666596" />
-    <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588614520187" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1593002265042">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1593002265042" />
-    <state x="380" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585756185236">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="380" y="343" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1585756185236" />
-    <state x="97" y="13" key="new project wizard" timestamp="1584792187860">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="97" y="13" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1584792187860" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

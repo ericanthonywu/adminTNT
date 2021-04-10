@@ -25,8 +25,8 @@ import EditBlog from "./screen/admin/Blog/EditBlog";
 
 class App extends React.Component {
 
-    generateProtectedRoute = role => {
-        switch (role) {
+    generateProtectedRoute = () => {
+        switch (this.props.role) {
             case "clinic":
                 return (
                     <BrowserRouter basename={"/"}>
@@ -61,11 +61,6 @@ class App extends React.Component {
         const username = localStorage.getItem("username");
         const id = localStorage.getItem("id");
         const role = localStorage.getItem("role");
-
-        localStorage.setItem('token', token)
-        localStorage.setItem('username', username)
-        localStorage.setItem('id', id)
-        localStorage.setItem('role', role)
 
         this.props.login({
             token,
@@ -153,7 +148,7 @@ class App extends React.Component {
                 <Switch>
                     <Route path={'/'} exact component={clinicLogin}/>
                     <Route path={'/admin'} exact component={Login}/>
-                    {this.props.role ? this.generateProtectedRoute(this.props.role) : null}
+                    {this.props.role ? this.generateProtectedRoute() : null}
                     <Route component={Error404}/>
                 </Switch>
             </div>

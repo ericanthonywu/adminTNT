@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="fix admin bug" />
+    <list default="true" id="638f2881-a641-4f84-8d5d-73588028de5a" name="Default Changelist" comment="change host">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/EditVet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/EditVet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/Vet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/admin/dashboard.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,6 +251,9 @@
       <workItem from="1614369201645" duration="608000" />
       <workItem from="1614431414018" duration="402000" />
       <workItem from="1614502589072" duration="7509000" />
+      <workItem from="1614680979022" duration="553000" />
+      <workItem from="1615228127037" duration="158000" />
+      <workItem from="1618055979801" duration="6542000" />
     </task>
     <task id="LOCAL-00001" summary="clinic design">
       <created>1580994886840</created>
@@ -349,7 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614531010729</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="change port">
+      <created>1614681103470</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614681103470</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change host">
+      <created>1614681227634</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614681227634</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +410,20 @@
     <MESSAGE value="update backend" />
     <MESSAGE value="update backend url" />
     <MESSAGE value="fix admin bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix admin bug" />
+    <MESSAGE value="change port" />
+    <MESSAGE value="change host" />
+    <option name="LAST_COMMIT_MESSAGE" value="change host" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/screen/admin/Login.jsx</url>
+          <line>12</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

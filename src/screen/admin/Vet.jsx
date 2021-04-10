@@ -37,6 +37,7 @@ class Vet extends React.Component {
         offset: 0,
         realOffset: 0,
         vetData: [],
+        dayOfDuty: [],
         editState: {}
     }
 
@@ -95,40 +96,40 @@ class Vet extends React.Component {
         e.preventDefault()
         const {cert_id, KTP, vet_name, vet_email, expYear, address, password, lat, long} = this.state
         // if (cert_id && KTP && vet_email && vet_name && expYear && address && password && lat && long) {
-            Axios.post(`${api_url_admin}addVet`, {
-                token: this.props.token,
-                cert_id: cert_id,
-                KTP: KTP,
-                vet_name: vet_name,
-                vet_email: vet_email,
-                expYear: expYear,
-                address: address,
-                password: password,
-                lat: lat,
-                long: long
-            }).then(({id}) =>
-                this.setState({
-                    vetData: [...this.state.vetData, {
-                        _id: id,
-                        promoted: false,
-                        profile_picture: "default.png",
-                        username: vet_name,
-                        KTP: KTP,
-                        email: vet_email,
-                        createdAt: Date.now(),
-                        cert_id,
-                        ban: false,
-                        session: {
-                            coordinates: [long, lat]
-                        }
-                    }],
-                    modal: false
-                }, () => toast.success(`Vet ${vet_name} added`))
-            ).catch(err => {
-                if (err.status === 400) {
-                    toast.warn(err.data.msg)
-                }
-            })
+        Axios.post(`${api_url_admin}addVet`, {
+            token: this.props.token,
+            cert_id,
+            KTP,
+            vet_name,
+            vet_email,
+            expYear,
+            address,
+            password,
+            lat,
+            long,
+        }).then(({id}) =>
+            this.setState({
+                vetData: [...this.state.vetData, {
+                    _id: id,
+                    promoted: false,
+                    profile_picture: "default.png",
+                    username: vet_name,
+                    KTP,
+                    email: vet_email,
+                    createdAt: Date.now(),
+                    cert_id,
+                    ban: false,
+                    session: {
+                        coordinates: [long, lat]
+                    }
+                }],
+                modal: false
+            }, () => toast.success(`Vet ${vet_name} added`))
+        ).catch(err => {
+            if (err.status === 400) {
+                toast.warn(err.data.msg)
+            }
+        })
         // } else {
         //     toast.warn("Input not yet filled")
         // }
@@ -151,9 +152,7 @@ class Vet extends React.Component {
                     }).then(() => {
                         const {vetData} = this.state
                         vetData[index].ban = !ban
-                        this.setState({
-                            vetData: vetData
-                        })
+                        this.setState({vetData})
                         toast.success("Vet banned")
                     })
                 }
@@ -168,7 +167,6 @@ class Vet extends React.Component {
                         <MDBModalHeader toggle={this.toggle}>Add Vet to My Clinic</MDBModalHeader>
                         <form onSubmit={this.addVet}>
                             <MDBModalBody>
-
                                 <label className="grey-text">
                                     Certificate ID
                                 </label>
@@ -202,6 +200,46 @@ class Vet extends React.Component {
                                 <br/>
                                 <MDBInput type="textarea" name={"address"} label="Address" onChange={this.handleChange}
                                           outline/>
+
+                                <label className="grey-text">
+                                    Day Of Duty
+                                </label>
+                                <br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={1} onChange={this.handleChange}
+                                       id={'day1'}/>
+                                <label htmlFor="day1"> &nbsp; Monday</label> <br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={2} onChange={this.handleChange}
+                                       id={'day2'}/>
+                                <label htmlFor="day2"> &nbsp; Tuesday</label><br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={3} onChange={this.handleChange}
+                                       id={'day3'}/>
+                                <label htmlFor="day3"> &nbsp; Wednesday</label><br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={4} onChange={this.handleChange}
+                                       id={'day4'}/>
+                                <label htmlFor="day4"> &nbsp; Thursday</label><br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={5} onChange={this.handleChange}
+                                       id={'day5'}/>
+                                <label htmlFor="day5"> &nbsp; Friday</label><br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={6} onChange={this.handleChange}
+                                       id={'day6'}/>
+                                <label htmlFor="day6"> &nbsp; Saturday</label><br/>
+                                <input type="checkbox" name={'dayOfDuty[]'} value={7} onChange={this.handleChange}
+                                       id={'day7'}/>
+                                <label htmlFor="day7"> &nbsp; Sunday</label><br/>
+                                <br/>
+                                <label className="grey-text">
+                                    Lat
+                                </label>
+                                <input name={"lat"}
+                                       onChange={this.handleChange}
+                                       className="form-control"/>
+                                <br/>
+                                <label className="grey-text">
+                                    long
+                                </label>
+                                <input name={"long"}
+                                       onChange={this.handleChange}
+                                       className="form-control"/>
                                 <br/>
                                 <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
                                     Password
@@ -218,7 +256,8 @@ class Vet extends React.Component {
                     <MDBRow className={"contentContainer"}>
 
                         <MDBCol size="2">
-                            <MDBBtn type={"button"} color={"blue"} onClick={() => this.props.history.push("/dashboard")}> back </MDBBtn>
+                            <MDBBtn type={"button"} color={"blue"}
+                                    onClick={() => this.props.history.push("/dashboard")}> back </MDBBtn>
                         </MDBCol>
                         <MDBCol size="2">
                             <MDBBtn type={"button"} color={"blue"} onClick={() => this.setState({
@@ -229,7 +268,19 @@ class Vet extends React.Component {
                     <MDBRow className={"contentContainer"}>
                         {
                             this.state.vetData ?
-                                this.state.vetData.map(({username, profile_picture, promoted, email, cert_id, KTP, session, ban, _id, createdAt, expYear}, idx) =>
+                                this.state.vetData.map(({
+                                                            username,
+                                                            profile_picture,
+                                                            promoted,
+                                                            email,
+                                                            cert_id,
+                                                            KTP,
+                                                            session,
+                                                            ban,
+                                                            _id,
+                                                            createdAt,
+                                                            expYear
+                                                        }, idx) =>
                                     <MDBCard className={"cardClinic"}>
                                         <MDBCardBody>
                                             <MDBCardTitle>{username}</MDBCardTitle>
@@ -256,16 +307,16 @@ class Vet extends React.Component {
                                             </MDBCardText>
                                             {
                                                 session.coordinates
-                                                ?
+                                                    ?
                                                     <MDBCardText small>
                                                         Location: <a target={"_blank"}
                                                                      href={`http://maps.google.com/maps?z=12&t=m&q=loc:${session.coordinates[1]}+-${session.coordinates[0]}`}>see
                                                         on google maps</a>
                                                     </MDBCardText>
-                                                        :
-                                                        <MDBCardText small>
-                                                            Location:
-                                                        </MDBCardText>
+                                                    :
+                                                    <MDBCardText small>
+                                                        Location:
+                                                    </MDBCardText>
                                             }
                                             <MDBCardText small>
                                                 {moment(createdAt).format("DD MMM YYYY")}

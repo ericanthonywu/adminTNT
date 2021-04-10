@@ -17,10 +17,28 @@ class Login extends React.Component {
         loading: false
     }
 
-    handleChangeText = e =>
+    handleChangeText = e => {
+        const {name, value} = e.target
+        switch (name) {
+            case "long":
+                return this.setState({
+                    data: {
+                        ...this.state.data,
+                        session: {coordinates: [parseInt(value), this.state.data.session.coordinates ? this.state.data.session.coordinates[1] : null]}
+                    }
+                })
+            case "lat":
+                return this.setState({
+                    data: {
+                        ...this.state.data,
+                        session: {coordinates: [this.state.data.session.coordinates ? this.state.data.session.coordinates[0] : null, parseInt(value)]}
+                    }
+                })
+        }
         this.setState({
-            [e.target.name]: e.target.value
+            [name]: value
         })
+    }
 
     login = () => {
         const {username, password} = this.state
@@ -32,6 +50,7 @@ class Login extends React.Component {
                 username,
                 password,
             }).then(data => {
+                localStorage.clear()
                 localStorage.setItem('token', data.token)
                 localStorage.setItem('username', data.username)
                 localStorage.setItem('id', data.id)
@@ -65,13 +84,16 @@ class Login extends React.Component {
         const id = localStorage.getItem("id");
         const role = localStorage.getItem("role");
 
-        localStorage.setItem('token', token)
-        localStorage.setItem('username', username)
-        localStorage.setItem('id', id)
-        localStorage.setItem('role', role)
+        if (token && username && id && role) {
+            this.props.login({
+                token,
+                username,
+                id,
+                role
+            })
 
-        if (token && username && id && role){
-            return this.props.history.push("/admin/dashboard")
+            Axios.defaults.headers.common = {token}; // set default header
+            this.props.history.push("/admin/dashboard")
         }
     }
 

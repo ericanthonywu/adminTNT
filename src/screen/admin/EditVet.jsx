@@ -34,12 +34,13 @@ class EditVet extends React.Component {
             vetId: id
         }).then(data => {
             if (!data) {
-                return this.setState({
+                this.setState({
                     notFound: true
                 })
             }else{
+                console.log(data)
                 this.setState({
-                    data: data
+                    data
                 })
             }
         }).catch(response => {
@@ -54,6 +55,7 @@ class EditVet extends React.Component {
     editVet = e => {
         e.preventDefault()
 
+        alert(this.state.data.address)
         Axios.post(`${api_url_admin}editVet`,{
             token: this.props.token,
             ...this.state.data
@@ -62,21 +64,23 @@ class EditVet extends React.Component {
 
     handleChange = e => {
         const {name, value} = e.target
+
         switch (name) {
             case "long":
                 return this.setState({
-                    clinic: {
-                        ...this.state.clinic,
-                        session: {coordinates: [value, this.state.clinic.session.coordinates[1]]}
+                    data: {
+                        ...this.state.data,
+                        session: {coordinates: [parseInt(value), this.state.data.session.coordinates ? this.state.data.session.coordinates[1] : null]}
                     }
                 })
             case "lat":
                 return this.setState({
-                    clinic: {
-                        ...this.state.clinic,
-                        session: {coordinates: [this.state.clinic.session.coordinates[0], value]}
+                    data: {
+                        ...this.state.data,
+                        session: {coordinates: [this.state.data.session.coordinates ? this.state.data.session.coordinates[0] : null, parseInt(value)]}
                     }
                 })
+
         }
         this.setState({
             data: {
@@ -140,13 +144,13 @@ class EditVet extends React.Component {
                                 <label className="grey-text">
                                     Lat
                                 </label>
-                                <input name={"lat"} value={this.state.data.session.coordinates[1]} onChange={this.handleChange}
+                                <input name={"lat"} value={this.state.data.session.coordinates ? this.state.data.session.coordinates[1] : ""} onChange={this.handleChange}
                                        className="form-control"/>
                                 <br/>
                                 <label className="grey-text">
                                     long
                                 </label>
-                                <input name={"long"} value={this.state.data.session.coordinates[0]} onChange={this.handleChange}
+                                <input name={"long"} value={this.state.data.session.coordinates ? this.state.data.session.coordinates[0] : ""} onChange={this.handleChange}
                                        className="form-control"/>
                                 <br/>
                                 <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">

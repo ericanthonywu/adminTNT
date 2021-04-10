@@ -114,7 +114,6 @@ class Dashboard extends React.Component {
         Axios.post(`${api_url_admin}showClinic`, {
             offset: this.state.offset
         }).then(clinic => {
-            console.log(clinic)
             this.setState({clinic})
         })
     }
